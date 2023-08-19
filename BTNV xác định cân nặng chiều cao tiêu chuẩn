@@ -1,0 +1,47 @@
+var tieuChuan = [
+    { doTuoi: "1-2", canNang: [8, 15], chieuCao: [75, 90] },
+    { doTuoi: "3-4", canNang: [12, 18], chieuCao: [90, 105] },
+    { doTuoi: "5", canNang: [15, 22], chieuCao: [100, 115] },
+    { doTuoi: "6-12", canNang: [18, 50], chieuCao: [110, 150] },
+    { doTuoi: "13-17", canNang: [40, 70], chieuCao: [145, 175] },
+    { doTuoi: "18-24", canNang: [55, 75], chieuCao: [158, 176] }
+];
+
+
+var doTuoi = "18-24";
+var gioiTinh = "nam";
+var chieuCao = 170; // cm
+var canNang = 70; // kg
+
+
+var tieuChuanDoTuoi = null;
+for (var i = 0; i < tieuChuan.length; i++) {
+    if (tieuChuan[i].doTuoi === doTuoi) {
+        tieuChuanDoTuoi = tieuChuan[i];
+        break;
+    }
+}
+
+
+var tinhTrangCanNang = "";
+var tinhTrangChieuCao = "";
+
+if (canNang < tieuChuanDoTuoi.canNang[0]) {
+    tinhTrangCanNang = "gầy";
+} else if (canNang >= tieuChuanDoTuoi.canNang[0] && canNang <= tieuChuanDoTuoi.canNang[1]) {
+    tinhTrangCanNang = "bình thường";
+} else {
+    tinhTrangCanNang = "béo";
+}
+
+if (chieuCao < tieuChuanDoTuoi.chieuCao[0]) {
+    tinhTrangChieuCao = "lùn";
+} else if (chieuCao >= tieuChuanDoTuoi.chieuCao[0] && chieuCao <= tieuChuanDoTuoi.chieuCao[1]) {
+    tinhTrangChieuCao = "bình thường";
+} else {
+    tinhTrangChieuCao = "cao";
+}
+
+
+console.log("Tình trạng cân nặng: " + tinhTrangCanNang);
+console.log("Tình trạng chiều cao: " + tinhTrangChieuCao);
