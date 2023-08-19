@@ -1,0 +1,16 @@
+var chieuDai = 10; // m
+var chieuRong = 5; // m
+
+var loaiHinh = "";
+if (chieuDai === chieuRong) {
+    loaiHinh = "Hình vuông";
+} else {
+    loaiHinh = "Hình chữ nhật";
+}
+
+var dienTich = chieuDai * chieuRong;
+var chuVi = 2 * (chieuDai + chieuRong);
+
+console.log("Loại hình: " + loaiHinh);
+console.log("Diện tích: " + dienTich + "m²");
+console.log("Chu vi: " + chuVi + "m");
